@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>  <!-- ✅ Fix: Load jsPDF -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h2 id="testTopicTitle">MCQ Test</h2>
+        <div id="dateContainer">Date: <span id="currentDate"></span></div>
+        <div id="timerContainer">
+            <label for="timerSelect">Select Duration: </label>
+            <select id="timerSelect">
+                <option value="3600">1 Hour</option>
+                <option value="7200">2 Hours</option>
+                <option value="10800">3 Hours</option>
+            </select>
+            <button onclick="startTest()">Start Test</button>
+            <button onclick="pauseTest()">Pause Test</button>
+            <div id="timer"></div>
+        </div>
+    </header>
+
+    <div>
+        <label for="testTopic">Enter Test Topic: </label>
+        <input type="text" id="testTopic">
+        <button onclick="setTestTopic()">Set Topic</button>
+    </div>
+
+    <div>
+        <input type="file" id="fileInput" accept=".pdf">
+        <button onclick="extractText()">Extract Questions</button>
+    </div>
+
+    <form id="mcqTestForm">
+        <div id="output"></div>
+        <div class="pagination">
+            <button type="button" onclick="prevPage()" id="prevBtn" disabled>Previous</button>
+            <span id="pageNumber">Page 1</span>
+            <button type="button" onclick="nextPage()" id="nextBtn">Next</button>
+        </div>
+        <button type="button" onclick="submitTest()">Submit Test</button>
+    </form>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

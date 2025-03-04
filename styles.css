@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+#timerContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#timer {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+.blink {
+    color: red;
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}
+#output {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    max-width: 800px;
+    margin: auto;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    height: 500px;
+    background: #f9f9f9;
+    padding: 10px;
+}
+.question {
+    font-weight: bold;
+    margin-top: 15px;
+}
+.option {
+    margin-left: 20px;
+    display: block;  /* Ensures options appear row by row */
+    margin-top: 5px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: darkblue;
+}
+button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
